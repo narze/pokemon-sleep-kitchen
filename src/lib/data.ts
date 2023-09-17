@@ -1,7 +1,7 @@
 export interface Recipe {
 	name: string;
 	ingredients: IngredientRequirement[];
-	type: 'curry' | 'salad' | 'desserts';
+	type: 'curry' | 'salad' | 'dessert';
 }
 
 interface IngredientRequirement {
@@ -327,10 +327,10 @@ export const recipes = {
 			{ key: 'fiery_herb', quantity: 6 }
 		]
 	},
-	// Desserts
+	// dessert
 	fluffy_sweet_potatoes: {
 		name: 'Fluffy Sweet Potatoes',
-		type: 'desserts',
+		type: 'dessert',
 		ingredients: [
 			{ key: 'soft_potato', quantity: 9 },
 			{ key: 'moomoo_milk', quantity: 5 }
@@ -338,7 +338,7 @@ export const recipes = {
 	},
 	steadfast_ginger_cookies: {
 		name: 'Steadfast Ginger Cookies',
-		type: 'desserts',
+		type: 'dessert',
 		ingredients: [
 			{ key: 'honey', quantity: 14 },
 			{ key: 'warming_ginger', quantity: 12 },
@@ -348,23 +348,113 @@ export const recipes = {
 	},
 	fancy_apple_juice: {
 		name: 'Fancy Apple Juice',
-		type: 'desserts',
+		type: 'dessert',
 		ingredients: [{ key: 'fancy_apple', quantity: 8 }]
 	},
 	craft_soda_pop: {
 		name: 'Craft Soda Pop',
-		type: 'desserts',
+		type: 'dessert',
 		ingredients: [{ key: 'honey', quantity: 9 }]
 	},
 	ember_ginger_tea: {
 		name: 'Ember Ginger Tea',
-		type: 'desserts',
+		type: 'dessert',
 		ingredients: [
 			{ key: 'warming_ginger', quantity: 9 },
 			{ key: 'fancy_apple', quantity: 7 }
 		]
+	},
+	jigglypuffs_fruity_flan: {
+		name: "Jigglypuff's Fruity Flan",
+		type: 'dessert',
+		ingredients: [
+			{ key: 'honey', quantity: 20 },
+			{ key: 'fancy_egg', quantity: 15 },
+			{ key: 'moomoo_milk', quantity: 10 },
+			{ key: 'fancy_apple', quantity: 10 }
+		]
+	},
+	lovely_kiss_smoothie: {
+		name: 'Lovely Kiss Smoothie',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'fancy_apple', quantity: 11 },
+			{ key: 'moomoo_milk', quantity: 9 },
+			{ key: 'honey', quantity: 7 },
+			{ key: 'soothing_cacao', quantity: 8 }
+		]
+	},
+	lucky_chant_apple_pie: {
+		name: 'Lucky Chant Apple Pie',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'fancy_apple', quantity: 12 },
+			{ key: 'moomoo_milk', quantity: 4 }
+		]
+	},
+	nerolis_restorative_tea: {
+		name: "Neroli's Restorative Tea",
+		type: 'dessert',
+		ingredients: [
+			{ key: 'warming_ginger', quantity: 11 },
+			{ key: 'fancy_apple', quantity: 15 },
+			{ key: 'tasty_mushroom', quantity: 9 }
+		]
+	},
+	sweet_scent_chocolate_cake: {
+		name: 'Sweet Scent Chocolate Cake',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'honey', quantity: 9 },
+			{ key: 'soothing_cacao', quantity: 8 },
+			{ key: 'moomoo_milk', quantity: 7 }
+		]
+	},
+	warm_moomoo_milk: {
+		name: 'Warm Moomoo Milk',
+		type: 'dessert',
+		ingredients: [{ key: 'moomoo_milk', quantity: 7 }]
+	},
+	cloud_nine_soy_cake: {
+		name: 'Cloud Nine Soy Cake',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'fancy_egg', quantity: 8 },
+			{ key: 'greengrass_soybeans', quantity: 7 }
+		]
+	},
+	hustle_protein_smoothie: {
+		name: 'Hustle Protein Smoothie',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'greengrass_soybeans', quantity: 15 },
+			{ key: 'soothing_cacao', quantity: 8 }
+		]
+	},
+	stalwart_vegetable_juice: {
+		name: 'Stalwart Vegetable Juice',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'snoozy_tomato', quantity: 9 },
+			{ key: 'fancy_apple', quantity: 7 }
+		]
+	},
+	big_malasada: {
+		name: 'Big Malasada',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'pure_oil', quantity: 10 },
+			{ key: 'moomoo_milk', quantity: 7 },
+			{ key: 'honey', quantity: 6 }
+		]
+	},
+	huge_power_soy_donuts: {
+		name: 'Huge Power Soy Donuts',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'pure_oil', quantity: 9 },
+			{ key: 'greengrass_soybeans', quantity: 6 },
+			{ key: 'soothing_cacao', quantity: 7 }
+		]
 	}
-	// jigglypuffs_fruity_flan: {
-	//   name: 'Jigglypuff\'s Fruity Flan',
-	// }
 } satisfies Record<string, Recipe>;

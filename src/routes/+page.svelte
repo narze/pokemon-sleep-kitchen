@@ -8,17 +8,21 @@
 	} from '$lib/data';
 	import Ingredient from '$lib/components/Ingredient.svelte';
 	import RecipeComponent from '$lib/components/Recipe.svelte';
-	import { recipesScoreStore, resetIngredients } from '$lib/store';
+	import { recipeTypesStore, recipesScoreStore, resetIngredients } from '$lib/store';
 
 	$: ingredientRecords = Object.entries(ingredients) as [
 		key: IngredientKey,
 		ingredient: IngredientType
 	][];
 
-	let recipesOrdered = orderByScore(recipes);
+	let recipesFiltered = orderByScore(recipes);
 
 	recipesScoreStore.subscribe(() => {
-		recipesOrdered = orderByScore(recipes).reverse();
+		recipeTypesStore.subscribe((types) => {
+			recipesFiltered = orderByScore(recipes)
+				.reverse()
+				.filter(([, recipe]) => types.length == 0 || types.includes(recipe.type));
+		});
 	});
 
 	function orderByScore(recipes: Record<string, Recipe>) {
@@ -51,10 +55,34 @@
 			{/each}
 		</div>
 
-		<h3 class="h3">Recipes</h3>
+		<h3 class="h3 space-x-4">
+			<span>Recipes</span>
+
+			{#each ['curry', 'salad', 'dessert'] as type}
+				{@const selected = $recipeTypesStore.includes(type)}
+				<button
+					class="btn btn-sm"
+					class:variant-ghost-primary={selected}
+					class:variant-ghost-surface={!selected}
+					on:click={() => {
+						recipeTypesStore.update((types) => {
+							if (types.includes(type)) {
+								types = types.filter((t) => t !== type);
+							} else {
+								types = [...types, type];
+							}
+
+							return types;
+						});
+					}}
+				>
+					{type}
+				</button>
+			{/each}
+		</h3>
 
 		<div class="flex gap-4 flex-wrap">
-			{#each recipesOrdered as [key, recipe]}
+			{#each recipesFiltered as [key, recipe]}
 				<RecipeComponent {key} {recipe} />
 			{/each}
 		</div>
