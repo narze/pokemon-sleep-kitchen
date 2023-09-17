@@ -25,7 +25,12 @@
 </script>
 
 <div class="relative">
-	<button class="btn variant-ghost-primary" on:click={increment}>
+	<button
+		class="btn"
+		class:variant-ghost-surface={!count}
+		class:variant-ghost-primary={count > 0}
+		on:click={increment}
+	>
 		<img height={32} width={32} src={`/images/ingredients/${key}.png`} alt={ingredient.name} />
 		<span>{ingredient.name}</span>
 		{#if count > 0}
