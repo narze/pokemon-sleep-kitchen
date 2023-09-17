@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { ingredientsStore, recipesScoreStore } from '$lib/store';
 	import { ingredients, type Recipe } from '$lib/data';
-	import { ingredientsStore } from '$lib/store';
 
 	export let key: string;
 	export let recipe: Recipe;
+	export let score: number = 0;
 
 	$: ingredientsRequirements = recipe.ingredients
 		.map((ingredientReq) => {
@@ -27,6 +28,20 @@
 	$: isCompleted = ingredientsRequirements.every((ingredient) => ingredient.needMore == 0);
 	$: isEmpty = ingredientsRequirements.every((ingredient) => ingredient.owned == 0);
 	$: isPartiallyCompleted = !isCompleted && !isEmpty;
+
+	$: score = [
+		(isCompleted ? 1 : 0) * 1000,
+		ingredientsRequirements.filter((ingredient) => ingredient.needMore == 0).length * 100,
+		ingredientsRequirements.filter((ingredient) => ingredient.needMore > 0 && ingredient.owned > 0)
+			.length * 10
+	].reduce((acc, val) => acc + val, 0);
+
+	$: {
+		recipesScoreStore.update((scores) => {
+			scores[key] = score;
+			return scores;
+		});
+	}
 </script>
 
 <div
@@ -34,6 +49,7 @@
 	class:variant-ghost-surface={isPartiallyCompleted}
 	class:variant-ghost-success={isCompleted}
 >
+	<!-- {score} -->
 	<header class="card-header font-bold">
 		<img height={32} width={32} src={`/images/recipes/${key}.png`} alt={recipe.name} />
 		{recipe.name}
