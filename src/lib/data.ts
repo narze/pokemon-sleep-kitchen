@@ -1,7 +1,7 @@
 export interface Recipe {
 	name: string;
 	ingredients: IngredientRequirement[];
-	type: 'curry' | 'salad' | 'drinks';
+	type: 'curry' | 'salad' | 'desserts';
 }
 
 interface IngredientRequirement {
@@ -195,8 +195,176 @@ export const recipes = {
 			{ key: 'fiery_herb', quantity: 4 },
 			{ key: 'fancy_egg', quantity: 4 }
 		]
-	}
+	},
 	// Salads
-
-	// Drinks
+	slowpoke_tail_pepper_salad: {
+		name: 'Slowpoke Tail Pepper Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'slowpoke_tail', quantity: 10 },
+			{ key: 'fiery_herb', quantity: 10 },
+			{ key: 'pure_oil', quantity: 15 }
+		]
+	},
+	spore_mushroom_salad: {
+		name: 'Spore Mushroom Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'tasty_mushroom', quantity: 17 },
+			{ key: 'snoozy_tomato', quantity: 8 },
+			{ key: 'pure_oil', quantity: 8 }
+		]
+	},
+	snow_cloak_caesar_salad: {
+		name: 'Snow Cloak Caesar Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'moomoo_milk', quantity: 10 },
+			{ key: 'bean_sausage', quantity: 6 }
+		]
+	},
+	gluttony_potato_salad: {
+		name: 'Gluttony Potato Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'soft_potato', quantity: 14 },
+			{ key: 'fancy_egg', quantity: 9 },
+			{ key: 'bean_sausage', quantity: 7 },
+			{ key: 'fancy_apple', quantity: 6 }
+		]
+	},
+	water_veil_tofu_salad: {
+		name: 'Water Veil Tofu Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'greengrass_soybeans', quantity: 10 },
+			{ key: 'snoozy_tomato', quantity: 6 }
+		]
+	},
+	superpower_extreme_salad: {
+		name: 'Superpower Extreme Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'bean_sausage', quantity: 9 },
+			{ key: 'warming_ginger', quantity: 6 },
+			{ key: 'fancy_egg', quantity: 6 },
+			{ key: 'soft_potato', quantity: 3 }
+		]
+	},
+	bean_ham_salad: {
+		name: 'Bean Ham Salad',
+		type: 'salad',
+		ingredients: [{ key: 'bean_sausage', quantity: 8 }]
+	},
+	snoozy_tomato_salad: {
+		name: 'Snoozy Tomato Salad',
+		type: 'salad',
+		ingredients: [{ key: 'snoozy_tomato', quantity: 8 }]
+	},
+	moomoo_caprese_salad: {
+		name: 'Moomoo Caprese Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'moomoo_milk', quantity: 12 },
+			{ key: 'snoozy_tomato', quantity: 6 },
+			{ key: 'pure_oil', quantity: 5 }
+		]
+	},
+	contrary_chocolate_meat_salad: {
+		name: 'Contrary Chocolate Meat Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'soothing_cacao', quantity: 14 },
+			{ key: 'bean_sausage', quantity: 9 }
+		]
+	},
+	overheat_ginger_salad: {
+		name: 'Overheat Ginger Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'fiery_herb', quantity: 17 },
+			{ key: 'warming_ginger', quantity: 10 },
+			{ key: 'snoozy_tomato', quantity: 8 }
+		]
+	},
+	fancy_apple_salad: {
+		name: 'Fancy Apple Salad',
+		type: 'salad',
+		ingredients: [{ key: 'fancy_apple', quantity: 8 }]
+	},
+	immunity_leek_salad: {
+		name: 'Immunity Leek Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'large_leek', quantity: 10 },
+			{ key: 'warming_ginger', quantity: 5 }
+		]
+	},
+	dazzling_apple_cheese_salad: {
+		name: 'Dazzling Apple Cheese Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'fancy_apple', quantity: 15 },
+			{ key: 'moomoo_milk', quantity: 5 },
+			{ key: 'pure_oil', quantity: 3 }
+		]
+	},
+	ninja_salad: {
+		name: 'Ninja Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'large_leek', quantity: 15 },
+			{ key: 'greengrass_soybeans', quantity: 15 },
+			{ key: 'tasty_mushroom', quantity: 12 },
+			{ key: 'warming_ginger', quantity: 11 }
+		]
+	},
+	heat_wave_tofu_salad: {
+		name: 'Heat Wave Tofu Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'greengrass_soybeans', quantity: 10 },
+			{ key: 'fiery_herb', quantity: 6 }
+		]
+	},
+	// Desserts
+	fluffy_sweet_potatoes: {
+		name: 'Fluffy Sweet Potatoes',
+		type: 'desserts',
+		ingredients: [
+			{ key: 'soft_potato', quantity: 9 },
+			{ key: 'moomoo_milk', quantity: 5 }
+		]
+	},
+	steadfast_ginger_cookies: {
+		name: 'Steadfast Ginger Cookies',
+		type: 'desserts',
+		ingredients: [
+			{ key: 'honey', quantity: 14 },
+			{ key: 'warming_ginger', quantity: 12 },
+			{ key: 'soothing_cacao', quantity: 5 },
+			{ key: 'fancy_egg', quantity: 4 }
+		]
+	},
+	fancy_apple_juice: {
+		name: 'Fancy Apple Juice',
+		type: 'desserts',
+		ingredients: [{ key: 'fancy_apple', quantity: 8 }]
+	},
+	craft_soda_pop: {
+		name: 'Craft Soda Pop',
+		type: 'desserts',
+		ingredients: [{ key: 'honey', quantity: 9 }]
+	},
+	ember_ginger_tea: {
+		name: 'Ember Ginger Tea',
+		type: 'desserts',
+		ingredients: [
+			{ key: 'warming_ginger', quantity: 9 },
+			{ key: 'fancy_apple', quantity: 7 }
+		]
+	}
+	// jigglypuffs_fruity_flan: {
+	//   name: 'Jigglypuff\'s Fruity Flan',
+	// }
 } satisfies Record<string, Recipe>;
