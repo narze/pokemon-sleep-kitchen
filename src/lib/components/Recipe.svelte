@@ -23,9 +23,17 @@
 				needMore: Math.max(ingredient.quantity - ingredient.owned, 0)
 			};
 		});
+
+	$: isCompleted = ingredientsRequirements.every((ingredient) => ingredient.needMore == 0);
+	$: isEmpty = ingredientsRequirements.every((ingredient) => ingredient.owned == 0);
+	$: isPartiallyCompleted = !isCompleted && !isEmpty;
 </script>
 
-<div class="card">
+<div
+	class="card"
+	class:variant-ghost-surface={isPartiallyCompleted}
+	class:variant-ghost-success={isCompleted}
+>
 	<header class="card-header font-bold">
 		<img height={32} width={32} src={`/images/recipes/${key}.png`} alt={recipe.name} />
 		{recipe.name}
