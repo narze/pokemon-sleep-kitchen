@@ -5,7 +5,7 @@ export interface Recipe {
 }
 
 interface IngredientRequirement {
-	key: keyof typeof ingredients;
+	key: IngredientKey;
 	quantity: number;
 }
 
@@ -13,7 +13,24 @@ export interface Ingredient {
 	name: string;
 }
 
-export const ingredients = {
+export type IngredientKey =
+	| 'large_leek'
+	| 'tasty_mushroom'
+	| 'fancy_egg'
+	| 'soft_potato'
+	| 'fancy_apple'
+	| 'fiery_herb'
+	| 'bean_sausage'
+	| 'moomoo_milk'
+	| 'honey'
+	| 'pure_oil'
+	| 'warming_ginger'
+	| 'snoozy_tomato'
+	| 'soothing_cacao'
+	| 'slowpoke_tail'
+	| 'greengrass_soybeans';
+
+export const ingredients: Record<IngredientKey, Ingredient> = {
 	large_leek: {
 		name: 'Large Leek'
 	},
@@ -59,7 +76,7 @@ export const ingredients = {
 	greengrass_soybeans: {
 		name: 'Greengrass Soybeans'
 	}
-} satisfies Record<string, Ingredient>;
+};
 
 export const recipes = {
 	// Curry

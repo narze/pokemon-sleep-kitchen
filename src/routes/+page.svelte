@@ -1,7 +1,17 @@
 <script lang="ts">
-	import { recipes, ingredients } from '$lib/data';
+	import {
+		recipes,
+		ingredients,
+		type IngredientKey,
+		type Ingredient as IngredientType
+	} from '$lib/data';
 	import Ingredient from '$lib/components/Ingredient.svelte';
 	import Recipe from '$lib/components/Recipe.svelte';
+
+	$: ingredientRecords = Object.entries(ingredients) as [
+		key: IngredientKey,
+		ingredient: IngredientType
+	][];
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center">
@@ -10,7 +20,7 @@
 
 		<h2 class="h2">Ingredients</h2>
 		<div class="flex gap-4 flex-wrap">
-			{#each Object.entries(ingredients) as [key, ingredient]}
+			{#each ingredientRecords as [key, ingredient]}
 				<Ingredient {key} {ingredient} />
 			{/each}
 		</div>
