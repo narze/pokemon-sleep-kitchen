@@ -3,8 +3,16 @@
 
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
-	import { storePopup } from '@skeletonlabs/skeleton';
+	import { AppShell, storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
 
-<slot />
+<!-- App Shell -->
+<AppShell>
+	<svelte:fragment slot="header" />
+
+	<!-- Page Route Content -->
+	<slot />
+
+	<svelte:fragment slot="footer" />
+</AppShell>
