@@ -53,6 +53,8 @@
 	<header class="card-header font-bold">
 		<img height={32} width={32} src={`/images/recipes/${key}.png`} alt={recipe.name} />
 		{recipe.name}
+		<br />
+		({recipe.type})
 	</header>
 
 	<section class="p-4 flex flex-row space-x-2 justify-center">

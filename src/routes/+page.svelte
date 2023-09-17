@@ -36,7 +36,7 @@
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-5 py-8">
+	<div class="space-y-5 px-4 py-8">
 		<h1 class="h1">Pokemon Sleep Kitchen</h1>
 
 		<h3 class="h3 space-x-4">
