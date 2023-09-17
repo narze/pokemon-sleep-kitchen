@@ -5,22 +5,21 @@
 	export let recipe: Recipe;
 </script>
 
-<div class="space-y-5">
-	<h2 class="h2">{recipe.name} ({key})</h2>
+<div class="card">
+	<header class="card-header font-bold">
+		<img height={32} width={32} src={`/images/recipes/${key}.png`} alt={recipe.name} />
+		{recipe.name}
+	</header>
 
-	<img height={32} width={32} src={`/images/recipes/${key}.png`} alt={recipe.name} />
-
-	<div class="flex flex-row space-x-5">
-		<div class="flex flex-col space-y-5">
-			<h3 class="h3">Ingredients</h3>
-
+	<section class="p-4 flex flex-row space-x-2">
+		<div class="flex flex-col space-y-2">
 			{#each recipe.ingredients as ingredientReq}
 				{@const ingredient = ingredients[ingredientReq.key]}
-				<div class="flex flex-row space-x-5">
-					<div class="flex flex-col space-y-5">
-						<h4 class="h4">{ingredient.name}</h4>
+				<div class="flex flex-row space-x-2">
+					<div class="flex flex-col space-y-2">
+						<div>{ingredient.name}</div>
 					</div>
-					<div class="flex flex-col space-y-5">
+					<div class="flex flex-col space-y-2">
 						<img
 							height={32}
 							width={32}
@@ -32,5 +31,5 @@
 				</div>
 			{/each}
 		</div>
-	</div>
+	</section>
 </div>
