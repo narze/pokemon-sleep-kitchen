@@ -64,7 +64,7 @@
 		{recipe.name}
 		<div class="w-full" />
 		<span
-			class="badge"
+			class="badge capitalize"
 			class:variant-outline-warning={recipe.type == 'curry'}
 			class:variant-outline-success={recipe.type == 'salad'}
 			class:variant-outline-tertiary={recipe.type == 'dessert'}>{recipe.type}</span

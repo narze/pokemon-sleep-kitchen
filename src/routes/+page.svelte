@@ -76,7 +76,7 @@
 			{#each ['curry', 'salad', 'dessert'] as type}
 				{@const selected = $recipeTypesStore.includes(type)}
 				<button
-					class="btn btn-sm"
+					class="btn btn-sm capitalize"
 					class:variant-ghost-primary={selected}
 					class:variant-ghost-surface={!selected}
 					on:click={() => {
