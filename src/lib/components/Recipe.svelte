@@ -60,9 +60,9 @@
 >
 	<!-- {score} -->
 	<header class="card-header font-bold space-x-1">
-		<img class="w-8 h-8 inline-block" src={`/images/recipes/${key}.png`} alt={recipe.name} />
+		<img class="w-10 h-10 inline-block" src={`/images/recipes/${key}.png`} alt={recipe.name} />
 		{recipe.name}
-		<div class="w-full" />
+		<div class="w-full h-1" />
 		<span
 			class="badge capitalize"
 			class:variant-outline-warning={recipe.type == 'curry'}

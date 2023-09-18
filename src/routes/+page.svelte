@@ -91,6 +91,13 @@
 						});
 					}}
 				>
+					<span class="pr-1">
+						<img
+							class="w-6 h-6 inline-block"
+							src={`/images/recipes/mixed_${type}.png`}
+							alt={`Mixed ${type}`}
+						/>
+					</span>
 					{type}
 				</button>
 			{/each}
