@@ -42,7 +42,9 @@
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-5 px-4 py-8">
-		<h1 class="h1">Pokemon Sleep Kitchen</h1>
+		<h1 class="h1">
+			<span class="gradient-heading">Pokemon Sleep Kitchen</span>
+		</h1>
 
 		<h3 class="h3 space-x-4">
 			<span>Ingredients</span><button
@@ -112,3 +114,13 @@
 		</div>
 	</div>
 </div>
+
+<style lang="postcss">
+	.gradient-heading {
+		@apply bg-clip-text text-transparent box-decoration-clone;
+		/* Direction */
+		@apply bg-gradient-to-br;
+		/* Color Stops */
+		@apply from-primary-500 via-tertiary-500 to-secondary-500;
+	}
+</style>
