@@ -70,7 +70,8 @@
 			{#each ingredientsRequirements as ingredient}
 				<div
 					class="badge"
-					class:variant-ghost-surface={ingredient.needMore > 0 && ingredient.owned > 0}
+					class:variant-ringed={ingredient.needMore > 0 && ingredient.owned == 0}
+					class:variant-ghost-secondary={ingredient.needMore > 0 && ingredient.owned > 0}
 					class:variant-ghost-success={ingredient.needMore == 0}
 					class:col-span-2={ingredientsRequirements.length == 1}
 				>
