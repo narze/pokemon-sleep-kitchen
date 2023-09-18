@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ingredientsStore, recipesScoreStore } from '$lib/store';
-	import { ingredients, type Recipe } from '$lib/data';
+	import { ingredients, type IngredientKey, type Recipe } from '$lib/data';
 
 	export let key: string;
 	export let recipe: Recipe;
@@ -44,6 +44,13 @@
 			return scores;
 		});
 	}
+
+	function ingredientIncrement(key: IngredientKey, amount = 1) {
+		ingredientsStore.update((ingredients) => {
+			ingredients[key] = (ingredients[key] || 0) + amount;
+			return ingredients;
+		});
+	}
 </script>
 
 <div
@@ -68,12 +75,15 @@
 	<section class="p-4 flex flex-row space-x-2 justify-center">
 		<div class="grid grid-cols-2 gap-2 md:flex md:flex-col w-full">
 			{#each ingredientsRequirements as ingredient}
-				<div
+				<button
 					class="badge"
-					class:variant-ringed={ingredient.needMore > 0 && ingredient.owned == 0}
-					class:variant-ghost-secondary={ingredient.needMore > 0 && ingredient.owned > 0}
-					class:variant-ghost-success={ingredient.needMore == 0}
+					class:variant-soft-surface={ingredient.needMore > 0 && ingredient.owned == 0}
+					class:variant-soft-secondary={ingredient.needMore > 0 && ingredient.owned > 0}
+					class:variant-soft-success={ingredient.needMore == 0}
 					class:col-span-2={ingredientsRequirements.length == 1}
+					on:click={() => {
+						ingredientIncrement(ingredient.key, ingredient.needMore);
+					}}
 				>
 					<div class="hidden md:flex flex-col space-y-2">
 						<div>{ingredient.name}</div>
@@ -91,7 +101,7 @@
 							<div class="text-red-500">({ingredient.needMore})</div>
 						</div>
 					{/if}
-				</div>
+				</button>
 			{/each}
 		</div>
 	</section>
