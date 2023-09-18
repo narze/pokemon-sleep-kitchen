@@ -6,6 +6,8 @@
 	export let recipe: Recipe;
 	export let score: number = 0;
 
+	const ingredientsSum = recipe.ingredients.reduce((acc, val) => acc + val.quantity, 0);
+
 	$: ingredientsRequirements = recipe.ingredients
 		.map((ingredientReq) => {
 			const ingredient = ingredients[ingredientReq.key];
@@ -45,16 +47,22 @@
 </script>
 
 <div
-	class="card"
+	class="card flex-1 min-w-[16rem]"
 	class:variant-ghost-surface={isPartiallyCompleted}
 	class:variant-ghost-success={isCompleted}
 >
 	<!-- {score} -->
-	<header class="card-header font-bold">
-		<img height={32} width={32} src={`/images/recipes/${key}.png`} alt={recipe.name} />
+	<header class="card-header font-bold space-x-1">
+		<img class="w-8 h-8 inline-block" src={`/images/recipes/${key}.png`} alt={recipe.name} />
 		{recipe.name}
-		<br />
-		({recipe.type})
+		<div class="w-full" />
+		<span
+			class="badge"
+			class:variant-outline-warning={recipe.type == 'curry'}
+			class:variant-outline-success={recipe.type == 'salad'}
+			class:variant-outline-tertiary={recipe.type == 'dessert'}>{recipe.type}</span
+		>
+		<span class="badge variant-outline-surface">{ingredientsSum}</span>
 	</header>
 
 	<section class="p-4 flex flex-row space-x-2 justify-center">
@@ -70,8 +78,7 @@
 					</div>
 					<div class="flex flex-col space-y-2">
 						<img
-							height={32}
-							width={32}
+							class="w-8 h-8"
 							src={`/images/ingredients/${ingredient.key}.png`}
 							alt={ingredient.name}
 						/>
