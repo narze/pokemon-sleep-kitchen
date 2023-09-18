@@ -47,7 +47,7 @@
 </script>
 
 <div
-	class="card flex-1 min-w-[16rem]"
+	class="card grow"
 	class:variant-ghost-surface={isPartiallyCompleted}
 	class:variant-ghost-success={isCompleted}
 >
