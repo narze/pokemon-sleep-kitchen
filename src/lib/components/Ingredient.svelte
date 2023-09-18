@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Ingredient, IngredientKey } from '$lib/data';
 	import { ingredientsStore } from '$lib/store';
+	import { popup, type PopupSettings } from '@skeletonlabs/skeleton';
 
 	export let key: IngredientKey;
 	export let ingredient: Ingredient;
@@ -22,17 +23,23 @@
 			return ingredients;
 		});
 	}
+
+	const popupHover: PopupSettings = {
+		event: 'hover',
+		target: `popup-${key}`,
+		placement: 'top'
+	};
 </script>
 
 <div class="relative">
 	<button
-		class="btn"
+		class="btn [&>*]:pointer-events-none"
 		class:variant-ghost-surface={!count}
 		class:variant-ghost-primary={count > 0}
 		on:click={increment}
+		use:popup={popupHover}
 	>
 		<img height={32} width={32} src={`/images/ingredients/${key}.png`} alt={ingredient.name} />
-		<span>{ingredient.name}</span>
 		{#if count > 0}
 			<span>x {count}</span>
 		{/if}
@@ -43,4 +50,9 @@
 			X
 		</button>
 	{/if}
+
+	<div class="card p-4 variant-filled-primary text-center" data-popup={`popup-${key}`}>
+		<p>{ingredient.name}</p>
+		<div class="arrow variant-filled-primary" />
+	</div>
 </div>
