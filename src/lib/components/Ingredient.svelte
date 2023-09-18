@@ -26,22 +26,22 @@
 
 	const popupHover: PopupSettings = {
 		event: 'hover',
-		target: `popup-${key}`,
+		target: `popup-ingredient-${key}`,
 		placement: 'top'
 	};
 </script>
 
 <div class="relative">
 	<button
-		class="btn [&>*]:pointer-events-none"
+		class="btn [&>*]:pointer-events-none space-x-1"
 		class:variant-ghost-surface={!count}
 		class:variant-ghost-primary={count > 0}
 		on:click={increment}
 		use:popup={popupHover}
 	>
-		<img height={32} width={32} src={`/images/ingredients/${key}.png`} alt={ingredient.name} />
+		<img class="w-8 h-8" src={`/images/ingredients/${key}.png`} alt={ingredient.name} />
 		{#if count > 0}
-			<span>x {count}</span>
+			<span class="text-sm">x {count}</span>
 		{/if}
 	</button>
 
@@ -50,9 +50,4 @@
 			X
 		</button>
 	{/if}
-
-	<div class="card p-4 variant-filled-primary text-center" data-popup={`popup-${key}`}>
-		<p>{ingredient.name}</p>
-		<div class="arrow variant-filled-primary" />
-	</div>
 </div>

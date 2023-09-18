@@ -49,9 +49,23 @@
 				on:click={resetIngredients}>Reset</button
 			>
 		</h3>
-		<div class="flex gap-4 flex-wrap">
+
+		<div>
+			<div class="flex flex-wrap gap-4 overflow-y-auto py-4 pr-3 max-h-[12rem]">
+				{#each ingredientRecords as [key, ingredient]}
+					<Ingredient {key} {ingredient} />
+				{/each}
+			</div>
+
+			<!-- Pop-ups -->
 			{#each ingredientRecords as [key, ingredient]}
-				<Ingredient {key} {ingredient} />
+				<div
+					class="card p-4 variant-filled-primary text-center z-10"
+					data-popup={`popup-ingredient-${key}`}
+				>
+					<p>{ingredient.name}</p>
+					<div class="arrow variant-filled-primary" />
+				</div>
 			{/each}
 		</div>
 
