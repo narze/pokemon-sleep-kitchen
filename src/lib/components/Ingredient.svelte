@@ -40,6 +40,8 @@
 		use:popup={popupHover}
 	>
 		<img class="w-8 h-8" src={`/images/ingredients/${key}.png`} alt={ingredient.name} />
+		<span class="hidden lg:block">{ingredient.name}</span>
+
 		{#if count > 0}
 			<span class="text-sm">x {count}</span>
 		{/if}

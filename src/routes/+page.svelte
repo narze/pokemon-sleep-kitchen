@@ -54,7 +54,7 @@
 		</h3>
 
 		<div>
-			<div class="flex flex-wrap gap-4 overflow-y-auto py-4 pr-3 max-h-[12rem]">
+			<div class="flex flex-wrap gap-4 overflow-y-auto py-4 pr-3 max-h-[14rem] lg:max-h-none">
 				{#each ingredientRecords as [key, ingredient]}
 					<Ingredient {key} {ingredient} />
 				{/each}
@@ -63,7 +63,7 @@
 			<!-- Pop-ups -->
 			{#each ingredientRecords as [key, ingredient]}
 				<div
-					class="card p-4 variant-filled-primary text-center z-10"
+					class="lg:invisible card p-4 variant-filled-primary text-center z-10"
 					data-popup={`popup-ingredient-${key}`}
 				>
 					<p>{ingredient.name}</p>
@@ -72,37 +72,39 @@
 			{/each}
 		</div>
 
-		<h3 class="h3 space-x-4">
+		<h3 class="h3 flex space-x-4">
 			<span>Recipes</span>
 
-			{#each ['curry', 'salad', 'dessert'] as type}
-				{@const selected = $recipeTypesStore.includes(type)}
-				<button
-					class="btn btn-sm capitalize"
-					class:variant-ghost-primary={selected}
-					class:variant-ghost-surface={!selected}
-					on:click={() => {
-						recipeTypesStore.update((types) => {
-							if (types.includes(type)) {
-								types = types.filter((t) => t !== type);
-							} else {
-								types = [...types, type];
-							}
+			<span class="flex gap-2 flex-wrap">
+				{#each ['curry', 'salad', 'dessert'] as type}
+					{@const selected = $recipeTypesStore.includes(type)}
+					<button
+						class="btn btn-sm capitalize"
+						class:variant-ghost-primary={selected}
+						class:variant-ghost-surface={!selected}
+						on:click={() => {
+							recipeTypesStore.update((types) => {
+								if (types.includes(type)) {
+									types = types.filter((t) => t !== type);
+								} else {
+									types = [...types, type];
+								}
 
-							return types;
-						});
-					}}
-				>
-					<span class="pr-1">
-						<img
-							class="w-6 h-6 inline-block"
-							src={`/images/recipes/mixed_${type}.png`}
-							alt={`Mixed ${type}`}
-						/>
-					</span>
-					{type}
-				</button>
-			{/each}
+								return types;
+							});
+						}}
+					>
+						<span class="pr-1">
+							<img
+								class="w-4 h-4 sm:w-6 sm:h-6 inline-block"
+								src={`/images/recipes/mixed_${type}.png`}
+								alt={`Mixed ${type}`}
+							/>
+						</span>
+						{type}
+					</button>
+				{/each}
+			</span>
 		</h3>
 
 		<div class="flex gap-4 flex-wrap">
