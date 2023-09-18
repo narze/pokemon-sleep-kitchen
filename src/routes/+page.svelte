@@ -9,6 +9,7 @@
 	import Ingredient from '$lib/components/Ingredient.svelte';
 	import RecipeComponent from '$lib/components/Recipe.svelte';
 	import { recipeTypesStore, recipesScoreStore, resetIngredients } from '$lib/store';
+	import { flip } from 'svelte/animate';
 
 	$: ingredientRecords = Object.entries(ingredients) as [
 		key: IngredientKey,
@@ -96,8 +97,10 @@
 		</h3>
 
 		<div class="flex gap-4 flex-wrap">
-			{#each recipesFiltered as [key, recipe]}
-				<RecipeComponent {key} {recipe} />
+			{#each recipesFiltered as [key, recipe] (key)}
+				<div class="flex flex-1 min-w-[16rem]" animate:flip={{ duration: 400 }}>
+					<RecipeComponent {key} {recipe} />
+				</div>
 			{/each}
 		</div>
 	</div>
