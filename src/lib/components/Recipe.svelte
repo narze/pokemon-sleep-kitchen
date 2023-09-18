@@ -76,7 +76,7 @@
 		<div class="grid grid-cols-2 gap-2 md:flex md:flex-col w-full">
 			{#each ingredientsRequirements as ingredient}
 				<button
-					class="badge"
+					class="badge space-x-1"
 					class:variant-soft-surface={ingredient.needMore > 0 && ingredient.owned == 0}
 					class:variant-soft-secondary={ingredient.needMore > 0 && ingredient.owned > 0}
 					class:variant-soft-success={ingredient.needMore == 0}
@@ -85,21 +85,22 @@
 						ingredientIncrement(ingredient.key, ingredient.needMore);
 					}}
 				>
-					<div class="hidden md:flex flex-col space-y-2">
+					<div class="hidden md:block">
 						<div>{ingredient.name}</div>
 					</div>
-					<div class="flex flex-col space-y-2">
-						<img
-							class="w-8 h-8"
-							src={`/images/ingredients/${ingredient.key}.png`}
-							alt={ingredient.name}
-						/>
-					</div>
-					x {ingredient.quantity}
+					<img
+						class="w-8 h-8"
+						src={`/images/ingredients/${ingredient.key}.png`}
+						alt={ingredient.name}
+					/>
+					<span>x {ingredient.quantity}</span>
+
 					{#if ingredient.needMore > 0 && ingredient.owned > 0}
-						<div class="flex flex-col space-y-2">
-							<div class="text-red-500">({ingredient.needMore})</div>
-						</div>
+						<div class="text-error-500">(-{ingredient.needMore})</div>
+					{/if}
+
+					{#if ingredient.needMore == 0 && ingredient.owned - ingredient.quantity > 0}
+						<div class="text-success-500">(+{ingredient.owned - ingredient.quantity})</div>
 					{/if}
 				</button>
 			{/each}
