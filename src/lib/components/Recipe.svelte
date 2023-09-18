@@ -66,14 +66,15 @@
 	</header>
 
 	<section class="p-4 flex flex-row space-x-2 justify-center">
-		<div class="flex flex-col space-y-2 w-full">
+		<div class="grid grid-cols-2 gap-2 md:flex md:flex-col w-full">
 			{#each ingredientsRequirements as ingredient}
 				<div
 					class="badge"
 					class:variant-ghost-surface={ingredient.needMore > 0 && ingredient.owned > 0}
 					class:variant-ghost-success={ingredient.needMore == 0}
+					class:col-span-2={ingredientsRequirements.length == 1}
 				>
-					<div class="flex flex-col space-y-2">
+					<div class="hidden md:flex flex-col space-y-2">
 						<div>{ingredient.name}</div>
 					</div>
 					<div class="flex flex-col space-y-2">
