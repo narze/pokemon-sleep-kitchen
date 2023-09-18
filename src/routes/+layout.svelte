@@ -7,6 +7,23 @@
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
 
+<svelte:head>
+	<title>Pokemon Sleep Kitchen</title>
+
+	<!-- Open Graph-->
+	<meta property="og:title" content="Pokemon Sleep Kitchen" />
+	<meta
+		property="og:description"
+		content="A tool for Pokemon Sleep that lists applicable recipes from ingredients you have."
+	/>
+	<meta
+		property="og:image"
+		content="https://pptr.io/api/screenshot?url=https://pokemon-sleep-kitchen.vercel.app"
+	/>
+	<meta property="og:url" content="https://pokemon-sleep-kitchen.vercel.app" />
+	<meta property="og:type" content="website" />
+</svelte:head>
+
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="header" />
