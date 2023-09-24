@@ -10,6 +10,14 @@
 	import RecipeComponent from '$lib/components/Recipe.svelte';
 	import { recipeTypesStore, recipesScoreStore, resetIngredients } from '$lib/store';
 	import { flip } from 'svelte/animate';
+	import { onMount } from 'svelte';
+
+	let isSafari = true;
+
+	// Check if the user agent contains "Safari" or "AppleWebKit"
+	onMount(() => {
+		isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+	});
 
 	$: ingredientRecords = Object.entries(ingredients) as [
 		key: IngredientKey,
@@ -108,11 +116,20 @@
 		</h3>
 
 		<div class="flex gap-4 flex-wrap">
-			{#each recipesFiltered as [key, recipe] (key)}
-				<div class="flex flex-1 min-w-[16rem]" animate:flip={{ duration: 400 }}>
-					<RecipeComponent {key} {recipe} />
-				</div>
-			{/each}
+			{#if isSafari}
+				<!-- Safari flip animation is buggy -->
+				{#each recipesFiltered as [key, recipe] (key)}
+					<div class="flex flex-1 min-w-[16rem]">
+						<RecipeComponent {key} {recipe} />
+					</div>
+				{/each}
+			{:else}
+				{#each recipesFiltered as [key, recipe] (key)}
+					<div class="flex flex-1 min-w-[16rem]" animate:flip={{ duration: 400 }}>
+						<RecipeComponent {key} {recipe} />
+					</div>
+				{/each}
+			{/if}
 		</div>
 	</div>
 </div>
