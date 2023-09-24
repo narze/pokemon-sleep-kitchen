@@ -115,17 +115,19 @@
 			</span>
 		</h3>
 
-		<div class="flex gap-4 flex-wrap">
+		<div
+			class="grid grid-cols-[repeat(auto-fill,minmax(12rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] gap-4 flex-wrap"
+		>
 			{#if isSafari}
 				<!-- Safari flip animation is buggy -->
 				{#each recipesFiltered as [key, recipe] (key)}
-					<div class="flex flex-1 min-w-[16rem]">
+					<div class="flex flex-1">
 						<RecipeComponent {key} {recipe} />
 					</div>
 				{/each}
 			{:else}
 				{#each recipesFiltered as [key, recipe] (key)}
-					<div class="flex flex-1 min-w-[16rem]" animate:flip={{ duration: 400 }}>
+					<div class="flex flex-1" animate:flip={{ duration: 400 }}>
 						<RecipeComponent {key} {recipe} />
 					</div>
 				{/each}
