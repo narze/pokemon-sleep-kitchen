@@ -46,7 +46,7 @@
 			increment();
 		}
 
-		if (event.key == 'Backspace') {
+		if (event.key == 'Backspace' || event.key == 'Delete') {
 			setCount(0);
 		}
 
