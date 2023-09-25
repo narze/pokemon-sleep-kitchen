@@ -11,7 +11,9 @@
 	import { recipeTypesStore, recipesScoreStore, resetIngredients } from '$lib/store';
 	import { flip } from 'svelte/animate';
 	import { onMount } from 'svelte';
+	import { getModalStore, type ModalSettings } from '@skeletonlabs/skeleton';
 
+	const modalStore = getModalStore();
 	let isSafari = true;
 
 	// Check if the user agent contains "Safari" or "AppleWebKit"
@@ -46,6 +48,20 @@
 	function calculateScore(recipeKey: string) {
 		return $recipesScoreStore[recipeKey] || 0;
 	}
+
+	function openModal() {
+		const modal: ModalSettings = {
+			type: 'alert',
+			title: 'Keyboard Mode',
+			body: [
+				"<kbd class='kbd'>Tab</kbd> to switch between ingredients",
+				"<kbd class='kbd'>⬅</kbd> & <kbd class='kbd'>➡</kbd> to change quantity on ingredient in focus",
+				"Type in numbers <kbd class='kbd'>0</kbd> - <kbd class='kbd'>9</kbd> to change quantity on ingredient in focus",
+				"<kbd class='kbd'>Backspace</kbd> or <kbd class='kbd'>Delete</kbd> to reset ingredient quantity"
+			].join('<br />')
+		};
+		modalStore.trigger(modal);
+	}
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center">
@@ -53,6 +69,12 @@
 		<h1 class="h1">
 			<span class="gradient-heading">Pokemon Sleep Kitchen</span>
 		</h1>
+
+		<div>
+			<button tabindex="-1" class="btn btn-sm variant-outline-primary" on:click={openModal}
+				>Keyboard mode</button
+			>
+		</div>
 
 		<h3 class="h3 space-x-4">
 			<span>Ingredients</span>

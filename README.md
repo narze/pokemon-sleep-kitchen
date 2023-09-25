@@ -10,8 +10,8 @@ A tool for Pokemon Sleep that lists applicable recipes from ingredients you have
 - Keyboard mode
   - `Tab` to switch between ingredients
   - `Left` & `Right` to change quantity on ingredient in focus
-  - Type in numbers to change quantity on ingredient
-  - `Backspace` to reset ingredient quantity
+  - Type in numbers `0` - `9` to change quantity on ingredient in focus
+  - `Backspace` or `Delete` to reset ingredient quantity
 
 ## Developing
 

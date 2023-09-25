@@ -1,10 +1,13 @@
 <script lang="ts">
 	import '../app.postcss';
 
+	import { AppBar, AppShell, storePopup, initializeStores, Modal } from '@skeletonlabs/skeleton';
+
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
-	import { AppBar, AppShell, storePopup } from '@skeletonlabs/skeleton';
+
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+	initializeStores();
 </script>
 
 <svelte:head>
@@ -23,6 +26,8 @@
 	<meta property="og:url" content="https://pokemon-sleep-kitchen.vercel.app" />
 	<meta property="og:type" content="website" />
 </svelte:head>
+
+<Modal />
 
 <!-- App Shell -->
 <AppShell>
