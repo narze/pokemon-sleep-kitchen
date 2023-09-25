@@ -87,10 +87,10 @@
 	{#if count > 0}
 		<button
 			tabindex="-1"
-			class="btn btn-sm variant-filled-error absolute -top-3 -right-3"
+			class="btn btn-sm variant-filled-error absolute -top-3 -right-3 text-xl h-8 w-8"
 			on:click={decrement}
 		>
-			X
+			-
 		</button>
 	{/if}
 </div>
