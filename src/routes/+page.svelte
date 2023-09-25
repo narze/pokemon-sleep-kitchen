@@ -55,9 +55,11 @@
 		</h1>
 
 		<h3 class="h3 space-x-4">
-			<span>Ingredients</span><button
-				class="btn btn-sm variant-outline-warning"
-				on:click={resetIngredients}>Reset</button
+			<span>Ingredients</span>
+
+			<!-- svelte-ignore a11y-autofocus -->
+			<button class="btn btn-sm variant-outline-warning" on:click={resetIngredients} autofocus
+				>Reset</button
 			>
 		</h3>
 

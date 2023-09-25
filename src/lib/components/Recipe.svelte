@@ -81,6 +81,7 @@
 					class:variant-soft-secondary={ingredient.needMore > 0 && ingredient.owned > 0}
 					class:variant-soft-success={ingredient.needMore == 0}
 					class:col-span-2={ingredientsRequirements.length == 1}
+					tabindex="-1"
 					on:click={() => {
 						ingredientIncrement(ingredient.key, ingredient.needMore);
 					}}
