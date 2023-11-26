@@ -247,7 +247,7 @@ export const recipes = {
 		ingredients: [
 			{ key: 'bean_sausage', quantity: 9 },
 			{ key: 'warming_ginger', quantity: 6 },
-			{ key: 'fancy_egg', quantity: 6 },
+			{ key: 'fancy_egg', quantity: 5 },
 			{ key: 'soft_potato', quantity: 3 }
 		]
 	},
