@@ -196,6 +196,16 @@ export const recipes = {
 			{ key: 'fancy_egg', quantity: 4 }
 		]
 	},
+	ninja_curry: {
+		name: 'Ninja Curry',
+		type: 'curry',
+		ingredients: [
+			{ key: 'greengrass_soybeans', quantity: 15 },
+			{ key: 'bean_sausage', quantity: 9 },
+			{ key: 'large_leek', quantity: 9 },
+			{ key: 'tasty_mushroom', quantity: 5 }
+		]
+	},
 	// Salads
 	slowpoke_tail_pepper_salad: {
 		name: 'Slowpoke Tail Pepper Salad',
