@@ -28,7 +28,8 @@ export type IngredientKey =
 	| 'snoozy_tomato'
 	| 'soothing_cacao'
 	| 'slowpoke_tail'
-	| 'greengrass_soybeans';
+	| 'greengrass_soybeans'
+	| 'greengrass_corn';
 
 export const ingredients: Record<IngredientKey, Ingredient> = {
 	large_leek: {
@@ -75,6 +76,9 @@ export const ingredients: Record<IngredientKey, Ingredient> = {
 	},
 	greengrass_soybeans: {
 		name: 'Greengrass Soybeans'
+	},
+	greengrass_corn: {
+		name: 'Greengrass Corn'
 	}
 };
 
