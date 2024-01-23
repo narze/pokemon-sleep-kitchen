@@ -2,6 +2,7 @@ export interface Recipe {
 	name: string;
 	ingredients: IngredientRequirement[];
 	type: 'curry' | 'salad' | 'dessert';
+	new?: boolean;
 }
 
 interface IngredientRequirement {
@@ -210,6 +211,27 @@ export const recipes = {
 			{ key: 'tasty_mushroom', quantity: 5 }
 		]
 	},
+	limber_corn_stew: {
+		name: 'Limber Corn Stew',
+		type: 'curry',
+		ingredients: [
+			{ key: 'greengrass_corn', quantity: 14 },
+			{ key: 'moomoo_milk', quantity: 8 },
+			{ key: 'soft_potato', quantity: 8 }
+		],
+		new: true
+	},
+	inferno_corn_keema_curry: {
+		name: 'Inferno Corn Keema Curry',
+		type: 'curry',
+		ingredients: [
+			{ key: 'fiery_herb', quantity: 27 },
+			{ key: 'bean_sausage', quantity: 24 },
+			{ key: 'greengrass_corn', quantity: 14 },
+			{ key: 'warming_ginger', quantity: 12 }
+		],
+		new: true
+	},
 	// Salads
 	slowpoke_tail_pepper_salad: {
 		name: 'Slowpoke Tail Pepper Salad',
@@ -341,6 +363,36 @@ export const recipes = {
 			{ key: 'fiery_herb', quantity: 6 }
 		]
 	},
+	greengrass_salad: {
+		name: 'Greengrass Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'pure_oil', quantity: 22 },
+			{ key: 'greengrass_corn', quantity: 17 },
+			{ key: 'snoozy_tomato', quantity: 14 },
+			{ key: 'soft_potato', quantity: 9 }
+		],
+		new: true
+	},
+	calm_mind_fruit_salad: {
+		name: 'Calm Mind Fruit Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'fancy_apple', quantity: 21 },
+			{ key: 'honey', quantity: 16 },
+			{ key: 'greengrass_corn', quantity: 12 }
+		],
+		new: true
+	},
+	fury_attack_corn_salad: {
+		name: 'Fury Attack Corn Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'greengrass_corn', quantity: 9 },
+			{ key: 'pure_oil', quantity: 8 }
+		],
+		new: true
+	},
 	// dessert
 	fluffy_sweet_potatoes: {
 		name: 'Fluffy Sweet Potatoes',
@@ -470,5 +522,26 @@ export const recipes = {
 			{ key: 'greengrass_soybeans', quantity: 6 },
 			{ key: 'soothing_cacao', quantity: 7 }
 		]
+	},
+	explosion_popcorn: {
+		name: 'Explosion Popcorn',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'greengrass_corn', quantity: 15 },
+			{ key: 'pure_oil', quantity: 14 },
+			{ key: 'moomoo_milk', quantity: 7 }
+		],
+		new: true
+	},
+	teatime_corn_scones: {
+		name: 'Teatime Corn Scones',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'fancy_apple', quantity: 20 },
+			{ key: 'warming_ginger', quantity: 20 },
+			{ key: 'greengrass_corn', quantity: 18 },
+			{ key: 'moomoo_milk', quantity: 9 }
+		],
+		new: true
 	}
 } satisfies Record<string, Recipe>;
