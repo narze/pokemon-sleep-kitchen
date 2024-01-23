@@ -63,6 +63,9 @@
 		<img class="w-10 h-10 inline-block" src={`/images/recipes/${key}.png`} alt={recipe.name} />
 		{recipe.name}
 		<div class="w-full h-1" />
+		{#if recipe.new}
+			<span class="badge variant-soft-success">New</span>
+		{/if}
 		<span
 			class="badge capitalize"
 			class:variant-outline-warning={recipe.type == 'curry'}
