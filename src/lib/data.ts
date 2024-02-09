@@ -543,5 +543,25 @@ export const recipes = {
 			{ key: 'moomoo_milk', quantity: 9 }
 		],
 		new: true
+	},
+	petal_dance_chocolate_tart: {
+		name: 'Petal Dance Chocolate Tart',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'fancy_apple', quantity: 11 },
+			{ key: 'soothing_cacao', quantity: 11 }
+		],
+		new: true
+	},
+	flower_gift_macarons: {
+		name: 'Flower Gift Macarons',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'soothing_cacao', quantity: 25 },
+			{ key: 'fancy_egg', quantity: 25 },
+			{ key: 'honey', quantity: 17 },
+			{ key: 'moomoo_milk', quantity: 10 }
+		],
+		new: true
 	}
 } satisfies Record<string, Recipe>;
