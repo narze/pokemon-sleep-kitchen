@@ -205,9 +205,9 @@ export const recipes = {
 		name: 'Ninja Curry',
 		type: 'curry',
 		ingredients: [
-			{ key: 'greengrass_soybeans', quantity: 15 },
+			{ key: 'greengrass_soybeans', quantity: 24 },
 			{ key: 'bean_sausage', quantity: 9 },
-			{ key: 'large_leek', quantity: 9 },
+			{ key: 'large_leek', quantity: 12 },
 			{ key: 'tasty_mushroom', quantity: 5 }
 		]
 	},
@@ -273,8 +273,8 @@ export const recipes = {
 		name: 'Water Veil Tofu Salad',
 		type: 'salad',
 		ingredients: [
-			{ key: 'greengrass_soybeans', quantity: 10 },
-			{ key: 'snoozy_tomato', quantity: 6 }
+			{ key: 'greengrass_soybeans', quantity: 15 },
+			{ key: 'snoozy_tomato', quantity: 9 }
 		]
 	},
 	superpower_extreme_salad: {
@@ -350,7 +350,7 @@ export const recipes = {
 		type: 'salad',
 		ingredients: [
 			{ key: 'large_leek', quantity: 15 },
-			{ key: 'greengrass_soybeans', quantity: 15 },
+			{ key: 'greengrass_soybeans', quantity: 19 },
 			{ key: 'tasty_mushroom', quantity: 12 },
 			{ key: 'warming_ginger', quantity: 11 }
 		]
@@ -518,8 +518,8 @@ export const recipes = {
 		name: 'Huge Power Soy Donuts',
 		type: 'dessert',
 		ingredients: [
-			{ key: 'pure_oil', quantity: 9 },
-			{ key: 'greengrass_soybeans', quantity: 6 },
+			{ key: 'pure_oil', quantity: 12 },
+			{ key: 'greengrass_soybeans', quantity: 16 },
 			{ key: 'soothing_cacao', quantity: 7 }
 		]
 	},
