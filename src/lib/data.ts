@@ -30,7 +30,8 @@ export type IngredientKey =
 	| 'soothing_cacao'
 	| 'slowpoke_tail'
 	| 'greengrass_soybeans'
-	| 'greengrass_corn';
+	| 'greengrass_corn'
+	| 'rousing_coffee';
 
 export const ingredients: Record<IngredientKey, Ingredient> = {
 	large_leek: {
@@ -80,6 +81,9 @@ export const ingredients: Record<IngredientKey, Ingredient> = {
 	},
 	greengrass_corn: {
 		name: 'Greengrass Corn'
+	},
+	rousing_coffee: {
+		name: 'Rousing Coffee'
 	}
 };
 
@@ -218,8 +222,7 @@ export const recipes = {
 			{ key: 'greengrass_corn', quantity: 14 },
 			{ key: 'moomoo_milk', quantity: 8 },
 			{ key: 'soft_potato', quantity: 8 }
-		],
-		new: true
+		]
 	},
 	inferno_corn_keema_curry: {
 		name: 'Inferno Corn Keema Curry',
@@ -229,6 +232,26 @@ export const recipes = {
 			{ key: 'bean_sausage', quantity: 24 },
 			{ key: 'greengrass_corn', quantity: 14 },
 			{ key: 'warming_ginger', quantity: 12 }
+		]
+	},
+	dizzy_punch_spicy_curry: {
+		name: 'Dizzy Punch Spicy Curry',
+		type: 'curry',
+		ingredients: [
+			{ key: 'rousing_coffee', quantity: 11 },
+			{ key: 'fiery_herb', quantity: 11 },
+			{ key: 'honey', quantity: 11 }
+		],
+		new: true
+	},
+	hidden_power_perk_up_stew: {
+		name: 'Hidden Power Perk-Up Stew',
+		type: 'curry',
+		ingredients: [
+			{ key: 'greengrass_soybeans', quantity: 28 },
+			{ key: 'snoozy_tomato', quantity: 25 },
+			{ key: 'tasty_mushroom', quantity: 23 },
+			{ key: 'rousing_coffee', quantity: 16 }
 		],
 		new: true
 	},
@@ -371,8 +394,7 @@ export const recipes = {
 			{ key: 'greengrass_corn', quantity: 17 },
 			{ key: 'snoozy_tomato', quantity: 14 },
 			{ key: 'soft_potato', quantity: 9 }
-		],
-		new: true
+		]
 	},
 	calm_mind_fruit_salad: {
 		name: 'Calm Mind Fruit Salad',
@@ -381,8 +403,7 @@ export const recipes = {
 			{ key: 'fancy_apple', quantity: 21 },
 			{ key: 'honey', quantity: 16 },
 			{ key: 'greengrass_corn', quantity: 12 }
-		],
-		new: true
+		]
 	},
 	fury_attack_corn_salad: {
 		name: 'Fury Attack Corn Salad',
@@ -390,6 +411,27 @@ export const recipes = {
 		ingredients: [
 			{ key: 'greengrass_corn', quantity: 9 },
 			{ key: 'pure_oil', quantity: 8 }
+		]
+	},
+	cross_chop_salad: {
+		name: 'Cross Chop Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'fancy_egg', quantity: 20 },
+			{ key: 'bean_sausage', quantity: 15 },
+			{ key: 'greengrass_corn', quantity: 11 },
+			{ key: 'snoozy_tomato', quantity: 10 }
+		],
+		new: true
+	},
+	defiant_coffee_dressed_salad: {
+		name: 'Defiant Coffee-Dressed Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'rousing_coffee', quantity: 28 },
+			{ key: 'bean_sausage', quantity: 28 },
+			{ key: 'pure_oil', quantity: 22 },
+			{ key: 'soft_potato', quantity: 22 }
 		],
 		new: true
 	},
@@ -530,8 +572,7 @@ export const recipes = {
 			{ key: 'greengrass_corn', quantity: 15 },
 			{ key: 'pure_oil', quantity: 14 },
 			{ key: 'moomoo_milk', quantity: 7 }
-		],
-		new: true
+		]
 	},
 	teatime_corn_scones: {
 		name: 'Teatime Corn Scones',
@@ -541,8 +582,7 @@ export const recipes = {
 			{ key: 'warming_ginger', quantity: 20 },
 			{ key: 'greengrass_corn', quantity: 18 },
 			{ key: 'moomoo_milk', quantity: 9 }
-		],
-		new: true
+		]
 	},
 	petal_dance_chocolate_tart: {
 		name: 'Petal Dance Chocolate Tart',
@@ -550,8 +590,7 @@ export const recipes = {
 		ingredients: [
 			{ key: 'fancy_apple', quantity: 11 },
 			{ key: 'soothing_cacao', quantity: 11 }
-		],
-		new: true
+		]
 	},
 	flower_gift_macarons: {
 		name: 'Flower Gift Macarons',
@@ -561,6 +600,26 @@ export const recipes = {
 			{ key: 'fancy_egg', quantity: 25 },
 			{ key: 'honey', quantity: 17 },
 			{ key: 'moomoo_milk', quantity: 10 }
+		]
+	},
+	early_bird_coffee_jelly: {
+		name: 'Early Bird Coffee Jelly',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'rousing_coffee', quantity: 16 },
+			{ key: 'moomoo_milk', quantity: 14 },
+			{ key: 'honey', quantity: 12 }
+		],
+		new: true
+	},
+	zing_zap_spiced_cola: {
+		name: 'Zing Zap Spiced Cola',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'fancy_apple', quantity: 35 },
+			{ key: 'warming_ginger', quantity: 20 },
+			{ key: 'large_leek', quantity: 20 },
+			{ key: 'rousing_coffee', quantity: 12 }
 		],
 		new: true
 	}
