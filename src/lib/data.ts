@@ -241,8 +241,7 @@ export const recipes = {
 			{ key: 'rousing_coffee', quantity: 11 },
 			{ key: 'fiery_herb', quantity: 11 },
 			{ key: 'honey', quantity: 11 }
-		],
-		new: true
+		]
 	},
 	hidden_power_perk_up_stew: {
 		name: 'Hidden Power Perk-Up Stew',
@@ -252,8 +251,7 @@ export const recipes = {
 			{ key: 'snoozy_tomato', quantity: 25 },
 			{ key: 'tasty_mushroom', quantity: 23 },
 			{ key: 'rousing_coffee', quantity: 16 }
-		],
-		new: true
+		]
 	},
 	// Salads
 	slowpoke_tail_pepper_salad: {
@@ -421,8 +419,7 @@ export const recipes = {
 			{ key: 'bean_sausage', quantity: 15 },
 			{ key: 'greengrass_corn', quantity: 11 },
 			{ key: 'snoozy_tomato', quantity: 10 }
-		],
-		new: true
+		]
 	},
 	defiant_coffee_dressed_salad: {
 		name: 'Defiant Coffee-Dressed Salad',
@@ -432,8 +429,7 @@ export const recipes = {
 			{ key: 'bean_sausage', quantity: 28 },
 			{ key: 'pure_oil', quantity: 22 },
 			{ key: 'soft_potato', quantity: 22 }
-		],
-		new: true
+		]
 	},
 	// dessert
 	fluffy_sweet_potatoes: {
@@ -609,8 +605,7 @@ export const recipes = {
 			{ key: 'rousing_coffee', quantity: 16 },
 			{ key: 'moomoo_milk', quantity: 14 },
 			{ key: 'honey', quantity: 12 }
-		],
-		new: true
+		]
 	},
 	zing_zap_spiced_cola: {
 		name: 'Zing Zap Spiced Cola',
@@ -620,6 +615,26 @@ export const recipes = {
 			{ key: 'warming_ginger', quantity: 20 },
 			{ key: 'large_leek', quantity: 20 },
 			{ key: 'rousing_coffee', quantity: 12 }
+		]
+	},
+	mold_breaker_corn_tiramisu: {
+		name: 'Mold Breaker Corn Tiramisu',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'rousing_coffee', quantity: 14 },
+			{ key: 'greengrass_corn', quantity: 14 },
+			{ key: 'moomoo_milk', quantity: 12 }
+		],
+		new: true
+	},
+	clodsire_eclair: {
+		name: 'Clodsire Eclair',
+		type: 'dessert',
+		ingredients: [
+			{ key: 'soothing_cacao', quantity: 30 },
+			{ key: 'moomoo_milk', quantity: 26 },
+			{ key: 'rousing_coffee', quantity: 24 },
+			{ key: 'honey', quantity: 22 }
 		],
 		new: true
 	}
