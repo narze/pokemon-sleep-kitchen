@@ -37,7 +37,13 @@
 	});
 
 	function orderByScore(recipes: Record<string, Recipe>) {
-		return Object.entries(recipes).sort((a, b) => {
+		const newRecipesFirst = Object.entries(recipes).sort((a, b) => {
+			if (a[1].new && !b[1].new) return 1;
+			if (b[1].new && !a[1].new) return -1;
+			return 0;
+		});
+
+		return newRecipesFirst.sort((a, b) => {
 			const aScore = calculateScore(a[0]);
 			const bScore = calculateScore(b[0]);
 
