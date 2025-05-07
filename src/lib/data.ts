@@ -431,6 +431,28 @@ export const recipes = {
 			{ key: 'soft_potato', quantity: 22 }
 		]
 	},
+	petal_blizzard_layered_salad: {
+		name: 'Petal Blizzard Layered Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'fancy_egg', quantity: 25 },
+			{ key: 'pure_oil', quantity: 17 },
+			{ key: 'soft_potato', quantity: 15 },
+			{ key: 'bean_sausage', quantity: 12 }
+		],
+		new: true
+	},
+	apple_acid_yogurt_dressed_salad: {
+		name: 'Apple Acid Yogurt-Dressed Salad',
+		type: 'salad',
+		ingredients: [
+			{ key: 'fancy_egg', quantity: 35 },
+			{ key: 'fancy_apple', quantity: 28 },
+			{ key: 'snoozy_tomato', quantity: 23 },
+			{ key: 'moomoo_milk', quantity: 18 }
+		],
+		new: true
+	},
 	// dessert
 	fluffy_sweet_potatoes: {
 		name: 'Fluffy Sweet Potatoes',
@@ -624,8 +646,7 @@ export const recipes = {
 			{ key: 'rousing_coffee', quantity: 14 },
 			{ key: 'greengrass_corn', quantity: 14 },
 			{ key: 'moomoo_milk', quantity: 12 }
-		],
-		new: true
+		]
 	},
 	clodsire_eclair: {
 		name: 'Clodsire Eclair',
@@ -635,7 +656,6 @@ export const recipes = {
 			{ key: 'moomoo_milk', quantity: 26 },
 			{ key: 'rousing_coffee', quantity: 24 },
 			{ key: 'honey', quantity: 22 }
-		],
-		new: true
+		]
 	}
 } satisfies Record<string, Recipe>;
