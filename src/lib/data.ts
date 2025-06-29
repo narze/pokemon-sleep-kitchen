@@ -253,6 +253,17 @@ export const recipes = {
 			{ key: 'rousing_coffee', quantity: 16 }
 		]
 	},
+	cut_sukiyaki_curry: {
+		name: '"Cut" Sukiyaki Curry',
+		type: 'curry',
+		ingredients: [
+			{ key: 'large_leek', quantity: 27 },
+			{ key: 'bean_sausage', quantity: 26 },
+			{ key: 'honey', quantity: 26 },
+			{ key: 'fancy_egg', quantity: 22 }
+		],
+		new: true
+	},
 	// Salads
 	slowpoke_tail_pepper_salad: {
 		name: 'Slowpoke Tail Pepper Salad',
@@ -439,8 +450,7 @@ export const recipes = {
 			{ key: 'pure_oil', quantity: 17 },
 			{ key: 'soft_potato', quantity: 15 },
 			{ key: 'bean_sausage', quantity: 12 }
-		],
-		new: true
+		]
 	},
 	apple_acid_yogurt_dressed_salad: {
 		name: 'Apple Acid Yogurt-Dressed Salad',
@@ -450,8 +460,7 @@ export const recipes = {
 			{ key: 'fancy_apple', quantity: 28 },
 			{ key: 'snoozy_tomato', quantity: 23 },
 			{ key: 'moomoo_milk', quantity: 18 }
-		],
-		new: true
+		]
 	},
 	// dessert
 	fluffy_sweet_potatoes: {
